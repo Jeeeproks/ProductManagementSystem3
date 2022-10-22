@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectManagementSystem.pages.HomePage"
+             BackgroundColor="{StaticResource BgColor}">
+   
+    
+
+        <ContentPage.ToolbarItems>
+            <ToolbarItem IconImageSource="" 
+                     Text="Modify" 
+                     x:Name="edititem"
+                     Order="Secondary"  
+                     Clicked="edititem_Clicked" />
+
+            <ToolbarItem IconImageSource="" 
+                     Text="Delete" 
+                     Order="Secondary"  
+                     x:Name="deleteitem"
+                     Clicked="deleteitem_Clicked"
+                         />
+
+        </ContentPage.ToolbarItems>
+
+
+        <Grid RowDefinitions="Auto,Auto,Auto,*">
+            <Frame HeightRequest="100" CornerRadius="50" BackgroundColor="{StaticResource FrameColor_1}"
+               Margin="0,0,0,0"/>
+
+            <Label Grid.Row="0" 
+               Text="Products List"
+               Margin="20" 
+               FontSize="Large"
+               FontAttributes="Bold"
+               VerticalOptions="Center" 
+               TextColor="{StaticResource lable}"/>
+
+            <ImageButton Grid.Row="0"
+                     HorizontalOptions="EndAndExpand" 
+                     Source="add.png" 
+                     HeightRequest="30"
+                     WidthRequest="40"
+                     VerticalOptions="Center"
+                     Margin="20" 
+                     BackgroundColor="Transparent" 
+                     Clicked="ImageButton_Clicked"/>
+
+        <SearchBar Grid.Row="1" 
+                   Margin="10" 
+                   Placeholder="Find School" 
+                   BackgroundColor="{StaticResource SecondaryColor}" 
+                   PlaceholderColor="{StaticResource lable}"
+                   />
+
+
+        <Label Grid.Row="2" 
+               BackgroundColor="{StaticResource BgColor}" 
+               x:Name="loader" TextColor="{StaticResource lable}"
+               HorizontalOptions="CenterAndExpand"
+                   />
+
+            <CollectionView Grid.Row="3" x:Name="ListProducts" SelectionMode="Single"
+                        SelectionChanged="ListProducts_SelectionChanged">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="2">
+                        <Border 
+                    
+                   HeightRequest="95" 
+                   Padding="0" Margin="2"
+                   
+                   BackgroundColor="{StaticResource BgColor}" 
+                   >
+
+                           
+
+                            <Grid ColumnDefinitions="Auto, *">
+                                <Line Grid.Column="0" 
+                        WidthRequest="5" 
+                        BackgroundColor="{StaticResource BgColor}"/>
+
+                                <StackLayout Grid.Column="1" Margin="0" 
+                               Orientation="Horizontal" 
+                               HorizontalOptions="FillAndExpand"
+                               BackgroundColor="Transparent">
+
+                                    <Grid RowSpacing="0" RowDefinitions="Auto, Auto, Auto"
+                                              ColumnDefinitions="Auto, *">
+
+                                        <Label VerticalOptions="CenterAndExpand" 
+                         Text="Product Id:"                          
+                         TextColor="{StaticResource lable}"                          
+                         FontSize="Medium" 
+                         LineBreakMode="TailTruncation"                         
+                         HorizontalOptions="Start" 
+                         Grid.Row="0" 
+                         Grid.Column="0" />
+
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding ProductId}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold" LineBreakMode="TailTruncation"
+                                                   TextColor="{StaticResource lable}" />
+                                        <Label VerticalOptions="CenterAndExpand" Text="Product Name:"
+                                                   TextColor="{StaticResource lable}"
+                                                   FontSize="Medium"
+                                                   HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" />
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ProductName}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold" LineBreakMode="TailTruncation"
+                                                   TextColor="{StaticResource lable}" />
+
+                                        <Label VerticalOptions="CenterAndExpand" Text="Product Origin:"
+                                                   TextColor="{StaticResource lable}"
+                                                   FontSize="Medium"
+                                                   HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" />
+
+                                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Origin}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold" LineBreakMode="TailTruncation"
+                                                   TextColor="{StaticResource lable}" />
+
+                                      
+
+
+
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </Border>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectManagementSystem.MainPage"
+             BackgroundColor="#1C375C">
+
+    <ContentPage.Content>
+        <Grid
+            
+            BackgroundColor="#1C375C"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            RowDefinitions="auto,*"
+            ColumnDefinitions="auto,*" 
+            >
+            
+
+            <Frame
+                Grid.Row="0"
+                Margin="20,40,20,20"
+                BorderColor="{StaticResource BgColor}"
+                CornerRadius="40"
+                BackgroundColor="{StaticResource SecondaryColor}"
+                HasShadow="True"
+                HeightRequest="450"
+                
+                 >
+                <Grid
+                    Padding="20,50,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    VerticalOptions="FillAndExpand" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*"
+                    
+                    >
+                   
+
+                    <Label
+                        
+                       
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Text="Welcome To PMS"
+                         />
+                    <Label
+                        Grid.Row="1" 
+                        Margin="0,-15,0,0"
+                        FontAttributes="Italic"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Product Management System"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                         />
+                    <Entry
+                        
+                        Grid.Row="2" 
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Firstname"
+                        x:Name="txtfname"
+                        VerticalOptions="FillAndExpand" />
+                    <Entry
+                        Grid.Row="3" 
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Lastname"
+                        x:Name="txtlname"
+                        VerticalOptions="FillAndExpand" />
+                    <Entry
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="4"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Email"
+                        x:Name="txtmail"
+                        VerticalOptions="FillAndExpand" />
+                    <Entry
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="5" 
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Password"
+                        IsPassword="True"
+                        x:Name="txtpass" 
+                        VerticalOptions="FillAndExpand" />
+                    <Button
+                        Grid.Column="0"
+                        Grid.ColumnSpan="1"
+                        Grid.Row="6"
+                        WidthRequest="270"
+                        
+                        CornerRadius="20"
+                        Text="Register" 
+                        x:Name="txtregister"
+                        Clicked="txtregister_Clicked"/>
+                    <Button  
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        WidthRequest="270"
+                        Grid.Row="6" 
+                        
+                        CornerRadius="20"
+                        Text="Cancel" 
+                        x:Name="txtcncel"
+                        Clicked="txtcncel_Clicked"
+                        />
+
+                </Grid>
+
+            </Frame>
+            <StackLayout
+                x:Name="progressLoading"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="Transparent">
+                <ActivityIndicator
+                x:Name="ai"
+                IsRunning="True" IsVisible="True"
+                HorizontalOptions="CenterAndExpand"
+                Color="{StaticResource ButtonColor}" Margin="0,300,0,0" />
+                <Label x:Name="lblorderstate" Text="We're processing your request, please wait..." Margin="0" HorizontalOptions="CenterAndExpand" TextColor="WhiteSmoke"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+
+       

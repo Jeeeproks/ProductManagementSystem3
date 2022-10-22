@@ -1,0 +1,27 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProjectManagementSystem"
+             x:Class="ProjectManagementSystem.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BgColor">#C3F8FF</Color>
+            <Color x:Key="SecondaryColor">#ABD9FF</Color>
+            <Color x:Key="BTnColor">#FFEBAD</Color>
+            <Color x:Key="lable">#1C375C</Color>         
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource lable}" />
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource lable}" />
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource BTnColor}" />
+                <Setter Property="Padding" Value="14,10" />
+            
+            </Style >
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

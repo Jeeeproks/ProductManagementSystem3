@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectManagementSystem.pages.welcome"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             BackgroundColor="#1C375C">
+    
+    <ContentPage.Content>
+       
+        <Grid
+            BackgroundColor="#1C375C"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" 
+                />
+            </Grid.RowDefinitions>
+           
+           
+            <Frame
+                Grid.Row="0"
+                Margin="20,40,20,20"
+                BorderColor="{StaticResource SecondaryColor}"
+                BackgroundColor="{StaticResource SecondaryColor}"
+                CornerRadius="25"
+                HasShadow="True"
+                HeightRequest="400">
+                
+                <Grid
+                    Padding="20,50,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Product Management System"
+                        TextColor="#1C375C" />
+                    <Label
+                        Grid.Row="1"
+                        Margin="0,-15,0,0"
+                        FontAttributes="Italic"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="An Application that manage your Products"
+                        TextColor="#1C375C" />
+                   
+                    <Button
+                        Grid.Row="2"
+                        WidthRequest="240"
+                        
+                        CornerRadius="20"
+                        Text="Already have an account ?" 
+                        x:Name="txtacct"
+                        Clicked="txtacct_Clicked"/>
+                    <Button
+                        Grid.Row="2" Grid.Column="1"
+                        WidthRequest="240"
+                       
+                        CornerRadius="20"
+                        Text="Get Started" 
+                        x:Name="txtstart"
+                        Clicked="txtstart_Clicked"  
+                        />
+                   
+                </Grid>
+
+            </Frame>
+            <skia:SKLottieView Source="91022-teamwork-productivy.json"
+                           RepeatCount="-1"
+                           HeightRequest="300" WidthRequest="300"
+                           Margin="460,0,0,0"/>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
