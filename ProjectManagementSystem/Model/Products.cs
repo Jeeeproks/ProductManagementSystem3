@@ -127,8 +127,8 @@ namespace ProjectManagementSystem.Model
                 .OnceAsync<Products>()).Select(item => new Products
                 {
                     ProductId = item.Object.ProductId,
-                    ProductName = item.Object.ProductName
-
+                    ProductName = item.Object.ProductName,
+                    Origin = item.Object.Origin
                 }).ToList();
         }
 

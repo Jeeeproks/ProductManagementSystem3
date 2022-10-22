@@ -54,5 +54,13 @@ public partial class HomePage : ContentPage
 
     }
 
-    
+    private async void SearchBar_SearchButtonPressed(object sender, EventArgs e)
+    {
+        ListProducts.ItemsSource = await prdlist.FindProduct(SearchBar.Text);
+       if (string.IsNullOrEmpty(SearchBar.Text))
+        {
+            ListProducts.ItemsSource = await prdlist.GetAllProducts();
+        }
+       
+    }
 }
